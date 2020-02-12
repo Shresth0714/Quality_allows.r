@@ -63,12 +63,6 @@ finalMeans
 
 ################################################################################
 ## 4
-
-
-
-
-################################################################################
-## 5
 plot_ly(financials, x = financials$`Lbs. Sold`, y = financials$Revenue, type = 'scatter',  name = 'Revenue') %>%
   layout(title = "Revenue vs Pounds sold", xaxis = list(title = "Pounds Sold"),
          yaxis=list(title='Revenue'))
@@ -79,7 +73,7 @@ corr_1
 
 
 ################################################################################
-## 6
+## 5
 plot_ly(x = weeklyVisits$Visits, y = financials$Revenue, type = 'scatter', name = 'Visits') %>%
   layout(title = "Revenue vs Visits", xaxis = list(title = "Visits"),
          yaxis=list(title='Revenue'))
@@ -87,12 +81,9 @@ corr_2 <- cor(financials$Revenue, weeklyVisits$Visits)
 corr_2
 
 
-################################################################################
-## 7
-
 
 ################################################################################
-## 8
+## 6
 lbsSold <- read_excel("Web Analytics Case Student Spreadsheet.xls", sheet=4, skip=4, col_names = T)
 
 # a.
@@ -142,8 +133,6 @@ actualCount(lbsSold$`Lbs. Sold`, 3) - actualCount(lbsSold$`Lbs. Sold`, 2)
 actualCount(lbsSold$`Lbs. Sold`, -2) - actualCount(lbsSold$`Lbs. Sold`, -3)
 
 # f.
-
-# g.
 install.packages('fBasics')
 library(fBasics)
 skewness <- skewness(lbsSold$`Lbs. Sold`)
